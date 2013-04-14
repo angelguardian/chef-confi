@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+# cookbook 'chef-client'
+
+# cookbook 'apache2', '>= 1.0.0'
+cookbook 'apt'
+cookbook 'openssl'
+cookbook 'build-essential'
+cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
+cookbook 'runit', "<= 0.16.2"
+
+cookbook 'rvm',
+  :git => 'rvmhttps://github.com/fnichol/chef-',
+  :ref => 'v0.9.0'
+
+cookbook 'postgresql'
+cookbook 'jetty'
+cookbook 'chef-solr',
+  :git => 'https://github.com/theozaurus/chef-solr'
+#   :ref => 'postgresql-improvements'
+cookbook 'git'
+

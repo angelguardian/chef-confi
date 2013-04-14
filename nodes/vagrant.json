@@ -1,0 +1,41 @@
+{
+  "nginx": {
+    "version": "1.2.3",
+    "default_site_enabled": true,
+    "source": {
+      "modules": ["http_gzip_static_module", "http_ssl_module"]
+    }
+  },
+  "postgresql": {
+    "password": {
+      "postgres": "postgres"
+    }
+  },
+  "solr": {
+    "version": "3.6.2"
+  },
+  "rvm": {
+    "rubies": ["1.9.3"],
+    "global_gems": [
+      {"name": "bundler"}
+    ],
+    "rvmrc": {
+      "rvm_project_rvmrc": 1,
+      "rvm_gemset_create_on_use_flag": 1,
+      "rvm_trust_rvmrcs_flag": 1
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[build-essential]",
+    // "recipe[openssl]",
+    "recipe[nginx::source]", 
+    "recipe[runit]",
+    "recipe[rvm::system]",
+    "recipe[postgresql::server]",
+    "recipe[jetty]",
+    "recipe[chef-solr]",
+    "recipe[git]"
+
+  ]
+}

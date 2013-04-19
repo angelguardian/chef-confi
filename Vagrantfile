@@ -128,5 +128,6 @@ Vagrant::Config.run do |config|
   end
 
   config.vm.forward_port 80, 8085
+  config.vm.network :hostonly, "192.168.50.4"
       
 end

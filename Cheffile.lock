@@ -12,6 +12,7 @@ SITE
       runit (<= 0.16.2)
       windows (>= 0.0.0)
       yum (>= 0.0.0)
+    imagemagick (0.2.2)
     java (1.10.0)
       windows (>= 0.0.0)
     jetty (0.1.0)
@@ -25,6 +26,7 @@ SITE
     postgresql (2.2.2)
       openssl (>= 0.0.0)
     runit (0.16.2)
+    user (0.3.0)
     windows (1.8.8)
       chef_handler (>= 0.0.0)
     yum (2.2.0)
@@ -49,6 +51,20 @@ GIT
       chef_gem (>= 0.0.0)
 
 GIT
+  remote: https://github.com/rchampourlier/chef_postgresql_server_utf8
+  ref: master
+  sha: f833dca90d161d301f74a4072d474d04e651eab9
+  specs:
+    postgresql_server_utf8 (0.0.1)
+
+GIT
+  remote: https://github.com/rchampourlier/chef_set_locale
+  ref: master
+  sha: dfc4ff3bc28a32ed8eced37c95dc0842c9db4cb2
+  specs:
+    set_locale (0.0.2)
+
+GIT
   remote: https://github.com/theozaurus/chef-solr
   ref: master
   sha: 3baba5227418888a3e091a071180226127d2c7b5
@@ -56,15 +72,31 @@ GIT
     chef-solr (0.1.2)
       jetty (>= 0.0.0)
 
+PATH
+  remote: site-cookbooks/deploy_keys
+  specs:
+    deploy_keys (0.0.1)
+
+PATH
+  remote: site-cookbooks/unicorn_configs
+  specs:
+    unicorn_configs (0.0.1)
+
 DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
   chef-solr (>= 0)
+  deploy_keys (>= 0)
   git (>= 0)
+  imagemagick (>= 0)
   jetty (>= 0)
   nginx (>= 0)
   openssl (>= 0)
   postgresql (>= 0)
+  postgresql_server_utf8 (>= 0)
   runit (<= 0.16.2)
   rvm (>= 0)
+  set_locale (>= 0)
+  unicorn_configs (>= 0)
+  user (>= 0)
 

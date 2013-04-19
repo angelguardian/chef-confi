@@ -1,0 +1,30 @@
+{
+  "name": "deploy_keys",
+  "description": "This is a small recipe to copy yours ssh key and add it to githubs project and perform the first clone",
+  "long_description": "This is a small recipe to copy yours ssh key and add it to githubs project and perform the first clone",
+  "maintainer": "Hector Bustillos",
+  "maintainer_email": "hector@crowdint.com",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "default"
+  },
+  "version": "0.0.1"
+}

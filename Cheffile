@@ -6,6 +6,7 @@ site 'http://community.opscode.com/api/v1'
 # cookbook 'chef-client'
 
 # cookbook 'apache2', '>= 1.0.0'
+cookbook 'user'
 cookbook 'apt'
 cookbook 'openssl'
 cookbook 'build-essential'
@@ -13,13 +14,29 @@ cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
 cookbook 'runit', "<= 0.16.2"
 
 cookbook 'rvm',
-  :git => 'rvmhttps://github.com/fnichol/chef-',
-  :ref => 'v0.9.0'
+  :git => 'https://github.com/fnichol/chef-rvm'
+
+cookbook 'imagemagick'
 
 cookbook 'postgresql'
+
+cookbook 'set_locale',
+  :git => 'https://github.com/rchampourlier/chef_set_locale'
+
+cookbook 'postgresql_server_utf8',
+  :git => 'https://github.com/rchampourlier/chef_postgresql_server_utf8'
+
 cookbook 'jetty'
 cookbook 'chef-solr',
   :git => 'https://github.com/theozaurus/chef-solr'
 #   :ref => 'postgresql-improvements'
 cookbook 'git'
+
+cookbook 'deploy_keys',
+  :path => 'site-cookbooks/deploy_keys'
+
+cookbook 'unicorn_configs',
+  :path => 'site-cookbooks/unicorn_configs'
+
+
 

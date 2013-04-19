@@ -1,0 +1,30 @@
+{
+  "name": "unicorn_configs",
+  "description": "This cookbook has my unicorn configs",
+  "long_description": "This cookbook has my unicorn configs",
+  "maintainer": "Hector Bustillos",
+  "maintainer_email": "hector@crowdint.com",
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "default": "default"
+  },
+  "version": "0.0.1"
+}

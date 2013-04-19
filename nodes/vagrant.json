@@ -46,9 +46,9 @@
   "deploy_keys": {
     "user": "rails-app",
     "box_name": "vagrant",
-    "github_user": "hecbuma",
-    "github_token": "5015365a305ddb0526ec0156188098005dd1bb01",
-    "github_repo": "blog.crowdint.com-1"
+    "github_user": "angelguardian",
+    "github_token": "d33aebdbe20b7765bcaf98e279c562c93c40e19f",
+    "github_repo": "angelguardian-mx"
   },
   "run_list": [
     "recipe[user::data_bag]",

@@ -10,6 +10,7 @@ cookbook 'user'
 cookbook 'apt'
 cookbook 'openssl'
 cookbook 'build-essential'
+cookbook 'ohai'
 cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
 cookbook 'runit', "<= 0.16.2"
 
@@ -18,13 +19,14 @@ cookbook 'rvm',
 
 cookbook 'imagemagick'
 
-cookbook 'postgresql'
+cookbook 'postgresql', '>= 1.0.0'
 
 cookbook 'set_locale',
   :git => 'https://github.com/rchampourlier/chef_set_locale'
 
 cookbook 'postgresql_server_utf8',
-  :git => 'https://github.com/rchampourlier/chef_postgresql_server_utf8'
+  # :git => 'https://github.com/rchampourlier/chef_postgresql_server_utf8'
+  :path => 'site-cookbooks/postgresql_server_utf8'
 
 cookbook 'jetty'
 cookbook 'chef-solr',
@@ -37,6 +39,8 @@ cookbook 'deploy_keys',
 
 cookbook 'unicorn_configs',
   :path => 'site-cookbooks/unicorn_configs'
+
+cookbook 'sudo'
 
 
 

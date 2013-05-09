@@ -1,4 +1,23 @@
-{
+{  
+  "default_attributes": {
+    "authorization": {
+      "sudo": {
+        "groups": ["rooties"],
+        "users": ["rails-app"],
+        "passwordless": "true "
+      },
+      "build_essential": {
+        "compiletime": true
+      }
+    }
+  },
+  "app": {
+    "name": "angelguardian",
+    "web_dir": "/home/rails-app/angelguardian"
+  },
+  "user":{
+    "name": "rails-app"
+  },
   "nginx": {
     "version": "1.2.3",
     "default_site_enabled": true,
@@ -6,7 +25,60 @@
       "modules": ["http_gzip_static_module", "http_ssl_module"]
     }
   },
+  "postgresql": {
+    "password": {
+      "postgres": "postgres"
+    }
+  },
+  "solr": {
+    "version": "3.6.2"
+  },
+  "users": [
+    "rails-app"
+  ],
+  "rvm": {
+    "autolibs": "enabled",
+    "default_ruby" : "1.9.3",
+    "global_gems": [
+      { "name": "bundler" }
+    ],
+    "user_installs": [
+      { "user": "rails-app",
+        "version": "1.15.3",
+        "install_rubies": false,
+        "default_ruby": "1.9.3",
+        "rubies" : ["1.9.3"],
+        "rvmrc": {
+          "rvm_pretty_print_flag": 1,
+          "rvm_gemset_create_on_use_flag": 1
+        }
+      }
+    ]
+  },
+  "deploy_keys": {
+    "user": "rails-app",
+    "box_name": "vagrant",
+    "github_user": "Angelguardianmx",
+    "github_token": "3bbeac1e4213ba733b26376e0aa8bc1381d08c91",
+    "github_repo": "angelguardian-mx"
+  },
   "run_list": [
-    "recipe[nginx::source]"
+    "recipe[user::data_bag]",
+    "recipe[user]",
+    "recipe[deploy_keys]",
+    "recipe[apt]",
+    "recipe[build-essential]",
+    "recipe[unicorn_configs]",
+    "recipe[openssl]",
+    "recipe[runit]",
+    "recipe[rvm::system]",
+    "recipe[rvm::user]",
+    "recipe[set_locale]",
+    "recipe[postgresql::server]",
+    "recipe[jetty]",
+    "recipe[chef-solr]",
+    "recipe[git]",
+    "recipe[imagemagick]",
+    "recipe[imagemagick::devel]"
   ]
 }

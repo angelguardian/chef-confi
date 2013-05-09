@@ -26,6 +26,7 @@ SITE
     postgresql (2.2.2)
       openssl (>= 0.0.0)
     runit (0.16.2)
+    sudo (2.0.4)
     user (0.3.0)
     windows (1.8.8)
       chef_handler (>= 0.0.0)
@@ -51,13 +52,6 @@ GIT
       chef_gem (>= 0.0.0)
 
 GIT
-  remote: https://github.com/rchampourlier/chef_postgresql_server_utf8
-  ref: master
-  sha: f833dca90d161d301f74a4072d474d04e651eab9
-  specs:
-    postgresql_server_utf8 (0.0.1)
-
-GIT
   remote: https://github.com/rchampourlier/chef_set_locale
   ref: master
   sha: dfc4ff3bc28a32ed8eced37c95dc0842c9db4cb2
@@ -78,6 +72,12 @@ PATH
     deploy_keys (0.0.1)
 
 PATH
+  remote: site-cookbooks/postgresql_server_utf8
+  specs:
+    postgresql_server_utf8 (0.0.1)
+      apt (>= 1.9.2)
+
+PATH
   remote: site-cookbooks/unicorn_configs
   specs:
     unicorn_configs (0.0.1)
@@ -91,12 +91,14 @@ DEPENDENCIES
   imagemagick (>= 0)
   jetty (>= 0)
   nginx (>= 0)
+  ohai (>= 0)
   openssl (>= 0)
-  postgresql (>= 0)
+  postgresql (>= 1.0.0)
   postgresql_server_utf8 (>= 0)
   runit (<= 0.16.2)
   rvm (>= 0)
   set_locale (>= 0)
+  sudo (>= 0)
   unicorn_configs (>= 0)
   user (>= 0)
 

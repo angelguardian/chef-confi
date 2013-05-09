@@ -1,4 +1,13 @@
 {  
+  "default_attributes": {
+    "authorization": {
+      "sudo": {
+        "groups": ["rooties"],
+        "users": ["rails-app"],
+        "passwordless": "true "
+      }
+    }
+  },
   "app": {
     "name": "angelguardian",
     "web_dir": "/home/rails-app/angelguardian"
@@ -46,8 +55,8 @@
   "deploy_keys": {
     "user": "rails-app",
     "box_name": "vagrant",
-    "github_user": "angelguardian",
-    "github_token": "d33aebdbe20b7765bcaf98e279c562c93c40e19f",
+    "github_user": "Angelguardianmx",
+    "github_token": "3bbeac1e4213ba733b26376e0aa8bc1381d08c91",
     "github_repo": "angelguardian-mx"
   },
   "run_list": [
@@ -56,9 +65,9 @@
     "recipe[deploy_keys]",
     "recipe[apt]",
     "recipe[build-essential]",
+    "recipe[ohai]",
     "recipe[unicorn_configs]",
     "recipe[openssl]",
-    "recipe[nginx::source]",
     "recipe[runit]",
     "recipe[rvm::system]",
     "recipe[rvm::user]",

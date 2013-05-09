@@ -8,6 +8,8 @@
     "ubuntu": ">= 0.0.0"
   },
   "dependencies": {
+    "nginx": ">= 1.4.0",
+    "ohai": "1.1.8"
   },
   "recommendations": {
   },
